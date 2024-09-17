@@ -3,13 +3,13 @@ import { createProfile } from '../../src/actions/profile'
 
 describe("Cadastro de Usuario", () => {
 
-  let name = 'Carlost'
-  let email = 'carlost@teste.com'
+  let name = 'CarlosA'
+  let email = 'carlosa@teste.com'
   let password = '123456'
 
   beforeEach(() => {
     cy.visit('/')
-    cy.wait(5000)
+    //cy.wait(5000)
     // chama App Action de registro / criação do usuário
     cy.window()
       .its('store')
@@ -20,7 +20,7 @@ describe("Cadastro de Usuario", () => {
     cy.window()
       .its('store')
       .invoke('dispatch', createProfile({ status: 'QA Júnior', skills: 'Cypress, Selenium' }))
-    cy.wait(5000)
+    //cy.wait(5000)
   }) // termina beforeEach
 
   afterEach(() => {
